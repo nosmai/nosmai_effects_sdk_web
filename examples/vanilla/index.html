@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nosmai Web SDK · Vanilla TypeScript</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div><h1>Nosmai Web SDK</h1><p>Vanilla TypeScript feature lab</p></div>
+        <pre id="status">Enter your key to begin.</pre>
+      </header>
+      <form id="start-form">
+        <input id="license-key" type="password" placeholder="NOSMAI-…" autocomplete="off" required />
+        <button type="submit">Start camera</button>
+      </form>
+      <div class="workspace">
+        <div class="preview-shell"><canvas id="preview"></canvas></div>
+        <section id="controls" hidden>
+          <details open>
+            <summary>Filters</summary>
+            <div class="panel">
+              <label class="wide">Local .nosmai <input id="local-effect" type="file" accept=".nosmai" /></label>
+              <button id="effect-clear" type="button">Clear filter</button>
+              <div class="row wide">
+                <button id="cloud-load" type="button">Load cloud filters</button>
+                <select id="cloud-filter" disabled><option>Load the catalogue first</option></select>
+                <button id="cloud-apply" type="button" disabled>Apply</button>
+              </div>
+            </div>
+          </details>
+          <details open>
+            <summary>Beauty</summary>
+            <div class="panel grid">
+              <label>Smoothing <input id="smoothing" type="range" min="0" max="1" step="0.01" value="0" /></label>
+              <label>Whitening <input id="whitening" type="range" min="0" max="1" step="0.01" value="0" /></label>
+              <label>Sharpening <input id="sharpening" type="range" min="0" max="1" step="0.01" value="0" /></label>
+            </div>
+          </details>
+          <details>
+            <summary>Makeup &amp; eye lens</summary>
+            <div class="panel grid makeup">
+              <label>Lips <span><input id="lips-color" type="color" value="#bf3151" /><input id="lips-intensity" type="range" min="0" max="1" step="0.01" value="0" /></span></label>
+              <label>Blush <span><input id="blush-color" type="color" value="#e38387" /><input id="blush-intensity" type="range" min="0" max="1" step="0.01" value="0" /></span></label>
+              <label>Eyelashes <span><input id="eyelash-color" type="color" value="#261a18" /><input id="eyelash-intensity" type="range" min="0" max="1" step="0.01" value="0" /></span></label>
+              <label>Eyeshadow <span><input id="eyeshadow-color" type="color" value="#76526e" /><input id="eyeshadow-intensity" type="range" min="0" max="1" step="0.01" value="0" /></span></label>
+              <label>Eye lens <span><input id="lens-color" type="color" value="#4b8b79" /><input id="lens-intensity" type="range" min="0" max="1" step="0.01" value="0" /></span></label>
+              <button id="makeup-clear" type="button">Clear makeup</button>
+            </div>
+          </details>
+          <details>
+            <summary>Face reshape</summary>
+            <div id="reshape-grid" class="panel grid"></div>
+            <button id="reshape-clear" type="button">Reset reshape</button>
+          </details>
+          <details>
+            <summary>Background</summary>
+            <div class="panel grid">
+              <label>Blur <input id="background-blur" type="range" min="0" max="1" step="0.01" value="0" /></label>
+              <label>Solid color <input id="background-color" type="color" value="#384b72" /></label>
+              <label class="wide">Replacement image <input id="background-image" type="file" accept="image/*" /></label>
+              <button id="background-clear" type="button">Clear background</button>
+            </div>
+          </details>
+          <details>
+            <summary>Hair segmentation</summary>
+            <div class="panel grid makeup">
+              <label>Hair tint <span><input id="hair-color" type="color" value="#8e3dbe" /><input id="hair-intensity" type="range" min="0" max="1" step="0.01" value="0" /></span></label>
+              <button id="hair-clear" type="button">Clear hair</button>
+            </div>
+          </details>
+        </section>
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

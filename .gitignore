@@ -1,0 +1,8 @@
+node_modules/
+*.tgz
+.DS_Store
+examples/**/node_modules/
+examples/**/dist/
+examples/**/public/nosmai/
+examples/**/.env*
+!examples/**/.env.example

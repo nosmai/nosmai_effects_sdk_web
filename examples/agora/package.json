@@ -1,0 +1,21 @@
+{
+  "name": "nosmai-web-agora-example",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "prepare:assets": "node ../copy-nosmai-assets.mjs public/nosmai",
+    "setup:local": "node setup-local-agora.mjs",
+    "dev": "npm run setup:local && npm run prepare:assets && vite --port 5184",
+    "build": "npm run prepare:assets && tsc --noEmit && vite build"
+  },
+  "dependencies": {
+    "@nosmai/web": "file:../..",
+    "agora-rtc-sdk-ng": "^4.24.8"
+  },
+  "devDependencies": {
+    "agora-token": "^2.0.3",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.0"
+  }
+}

@@ -1,0 +1,1 @@
+class h{handlers=new Map;on(t,s){let e=this.handlers.get(t);return e||(e=new Set,this.handlers.set(t,e)),e.add(s),()=>{e.delete(s)}}off(t,s){this.handlers.get(t)?.delete(s)}emit(t,s){const e=this.handlers.get(t);if(e)for(const n of[...e])try{n(s)}catch{}}}export{h as EventBus};

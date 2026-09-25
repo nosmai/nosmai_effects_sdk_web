@@ -1,0 +1,5 @@
+node_modules/
+dist/
+public/nosmai/
+.env*
+!.env.example

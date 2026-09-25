@@ -1,0 +1,60 @@
+{
+  "name": "@nosmai/web",
+  "version": "0.1.0-alpha.1",
+  "description": "Real-time face effects for the web, powered by the Nosmai engine (WebAssembly).",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./engine/*": "./engine/*",
+    "./engine-baseline/*": "./engine-baseline/*",
+    "./models/*": "./models/*",
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "default": "./dist/react/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "engine",
+    "engine-baseline",
+    "models",
+    "README.md",
+    "STREAMING.md"
+  ],
+  "sideEffects": false,
+  "keywords": [
+    "face",
+    "ar",
+    "filters",
+    "webassembly",
+    "camera",
+    "webgl"
+  ],
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nosmai/nosmai_effects_sdk_web.git"
+  },
+  "homepage": "https://nosmai.com",
+  "publishConfig": {
+    "access": "public"
+  }
+}

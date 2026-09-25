@@ -1,0 +1,20 @@
+{
+  "name": "nosmai-web-livekit-example",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "prepare:assets": "node ../copy-nosmai-assets.mjs public/nosmai",
+    "setup:local": "node setup-local-livekit.mjs",
+    "dev": "npm run setup:local && npm run prepare:assets && vite --port 5182",
+    "build": "npm run prepare:assets && tsc --noEmit && vite build"
+  },
+  "dependencies": {
+    "@nosmai/web": "file:../..",
+    "livekit-client": "^2.5.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "vite": "^6.0.0"
+  }
+}
